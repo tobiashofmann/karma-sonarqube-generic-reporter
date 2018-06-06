@@ -4,11 +4,6 @@ var fs = require('fs')
 var builder = require('xmlbuilder')
 var pathIsAbsolute = require('path-is-absolute')
 
-// concatenate test suite(s) and test description by default
-function defaultNameFormatter(browser, result) {
-    return result.suite.join(' ') + ' ' + result.description;
-}
-
 var UnitSonarQubeGenericReporter = function(baseReporterDecorator, config, logger, helper, formatError) {
     
     // variables
@@ -18,7 +13,7 @@ var UnitSonarQubeGenericReporter = function(baseReporterDecorator, config, logge
     var outputFile = reporterConfig.outputFile;
     var useBrowserName = reporterConfig.useBrowserName;
     var basePath = config.basePath;
-    var nameFormatter = defaultNameFormatter;
+    //var nameFormatter = defaultNameFormatter;
     var pendingFileWritings = 0;
     var fileWritingFinished = function() {};
     var allMessages = [];
@@ -41,6 +36,11 @@ var UnitSonarQubeGenericReporter = function(baseReporterDecorator, config, logge
     this.adapters = [ function(msg) {
         allMessages.push(msg)
     } ];
+    
+    var _unitTestName = function (result) {
+        return result.suite.join(' ') + ' ' + result.description;
+    }
+
 
     // Creates the outermost XML element: <testExecutions>
     var initializeXmlForBrowser = function(browser) {
@@ -155,7 +155,7 @@ var UnitSonarQubeGenericReporter = function(baseReporterDecorator, config, logge
             testObj.testCase = [];
         }
         var testCase = {
-            '@name' : nameFormatter(browser, result),
+            '@name' : _unitTestName(result),
             '@duration' : validMilliTime
         };
         
@@ -173,11 +173,13 @@ var UnitSonarQubeGenericReporter = function(baseReporterDecorator, config, logge
             log.warn("test skipped");
             
             testCase.skipped = {
-                    '@message': 'Test skipped'
+                    '@message': 'Test skipped',
+                    '#text': result["log"]
             };
         } else if (!result["success"]) {
             testCase.error = {
-                    '@message': 'Test error'
+                    '@message': 'Test error',
+                    '#text': result["log"]
             };
         }
         
@@ -233,9 +235,9 @@ var UnitSonarQubeGenericReporter = function(baseReporterDecorator, config, logge
         }
     };
 
-    // --------------------------------------------
-    // | Producing XML for individual testCase |
-    // --------------------------------------------
+    /**
+     * 
+     */
     this.specSuccess = this.specSkipped = this.specFailure = function(browser, result) {
 
         log.debug("this.specSuccess = this.specSkipped = this.specFailure  \n");
