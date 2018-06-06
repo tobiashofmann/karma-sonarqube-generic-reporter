@@ -1,0 +1,53 @@
+{
+  "name": "karma-sonarqube-generic-reporter",
+  "version": "1.0.0",
+  "description": "A Karma plugin. Report results in xml format for SonarQube.",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tobiashofmann/karma-sonarqube-generic-reporter.git"
+  },
+  "keywords": [
+    "junit",
+    "karma-plugin",
+    "karma-reporter",
+    "sonarqube"
+  ],
+  "author": "Tobias Hofmann <tobias.a.hofmann@gmail.com>",
+  "dependencies": {
+    "path-is-absolute": "^1.0.0",
+    "xmlbuilder": "8.2.2"
+  },
+  "peerDependencies": {
+    "karma": ">=0.9"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.11.1",
+    "eslint-config-standard": "^5.3.1",
+    "eslint-plugin-promise": "^1.3.2",
+    "eslint-plugin-standard": "^1.3.1",
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-conventional-changelog": "^6.1.0",
+    "grunt-conventional-github-releaser": "^1.0.0",
+    "grunt-eslint": "^18.1.0",
+    "grunt-npm": "^0.0.2",
+    "grunt-simple-mocha": "^0.4.1",
+    "libxml-xsd": "^0.5.2",
+    "load-grunt-tasks": "^3.2.0",
+    "mocha": "^3.2.0",
+    "proxyquire": "^1.7.4",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
+  },
+  "contributors": []
+}
