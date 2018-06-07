@@ -110,7 +110,7 @@ INFO: Imported test execution data for 5 files
 INFO: Sensor Generic Test Executions Report (done) | time=76ms
 ...
 INFO: Sensor SonarJS Coverage [javascript]
-INFO: Analysing [/Users/thofmann/Downloads/wake-on-lan/frontend/reports/coverage/lcov.info]
+INFO: Analysing [/Users/wake-on-lan/frontend/reports/coverage/lcov.info]
 INFO: Sensor SonarJS Coverage [javascript] (done) | time=12ms
 ...
 INFO: Task total time: 12.664 s
