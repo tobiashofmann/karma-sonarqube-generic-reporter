@@ -70,6 +70,15 @@ module.exports = function(config) {
 
 # Example
 
+To check whether the karma plugin is working I use my own Wake On Lan app written in OpenUI5. The source code is available on GitHub too: [wol-ui5](https://github.com/tobiashofmann/wol-ui5) The HTML app is in the folder frontend. After getting the source code, change to the folder and run npm install and then karma start.
+
+```bash
+git clone https://github.com/tobiashofmann/wol-ui5
+cd wol-ui5
+cd frontend
+nom install
+```
+
 ## Run karma
 
 To generate the report file, run karma. The plugin will create an XML file in the specified location. For instance, at ./reports/junit. 
