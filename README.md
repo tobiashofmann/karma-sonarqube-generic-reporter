@@ -4,7 +4,7 @@
 
 Based on the original [karma-junit-reporter](https://github.com/karma-runner/karma-junit-reporter).
 
-This version is adopted to work with SonarQube 7.x and the [Generic Test Data importer](https://docs.sonarqube.org/display/SONAR/Generic+Test+Data).
+This version is adjusted to work with SonarQube 7.x and the [Generic Test Data importer](https://docs.sonarqube.org/display/SONAR/Generic+Test+Data) used by SQ to import unit tests.
  
 ## Installation
 
