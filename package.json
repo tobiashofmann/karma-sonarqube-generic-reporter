@@ -19,7 +19,7 @@
     "karma-reporter",
     "sonarqube"
   ],
-  "author": "Tobias Hofmann <tobias.a.hofmann@gmail.com>",
+  "author": "Tobias Hofmann <hofmann.tobias@outlook.com>",
   "dependencies": {
     "path-is-absolute": "^1.0.0",
     "xmlbuilder": "8.2.2"
